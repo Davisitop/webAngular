@@ -1,0 +1,39 @@
+/* Elevación al pasar el mouse */
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* Efecto Zoom en imagen */
+
+.img-zoom {
+    transition: transform 0.5s ease;
+}
+
+.card-hover:hover .img-zoom {
+    transform: scale(1.1);
+}
+
+
+/* Animación suave de aparición */
+
+.animate-fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
