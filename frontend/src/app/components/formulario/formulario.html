@@ -1,1 +1,34 @@
-<p>formulario works!</p>
+<div class="card col-md-6 offset-md-3">
+    <div class="card-header bg-dark text-white">
+        Registro de Facturas
+    </div>
+    <div class="card-body">
+        
+        <div class="form-group mb-3">
+            <label>Ruc</label>
+            <input type="text" class="form-control" [(ngModel)]="ruc" placeholder="99999999001">
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Valor de factura</label>
+            <input type="number" class="form-control" [(ngModel)]="valor">
+        </div>
+
+        <div class="form-group mb-3">
+            <label>Gasto</label>
+            <select class="form-select" [(ngModel)]="gasto">
+                <option value="Ninguno">Ninguno</option>
+                <option value="Vivienda">Vivienda</option>
+                <option value="Salud">Salud</option>
+                <option value="Educación">Educación</option>
+                <option value="Vestimenta">Vestimenta</option>
+                <option value="Alimentación">Alimentación</option>
+            </select>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button class="btn btn-success" (click)="agregar()">Agregar</button>
+        </div>
+
+    </div>
+</div>

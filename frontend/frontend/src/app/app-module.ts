@@ -1,6 +1,5 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // 1. IMPORTANTE: Agregar esto para los formularios
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
@@ -8,7 +7,6 @@ import { Informacion } from './components/informacion/informacion';
 import { Formulario } from './components/formulario/formulario';
 import { Menu } from './components/menu/menu';
 import { Reporte } from './components/reporte/reporte';
-import { Contacto } from './components/contacto/contacto';
 
 @NgModule({
   declarations: [
@@ -16,14 +14,11 @@ import { Contacto } from './components/contacto/contacto';
     Informacion,
     Formulario,
     Menu,
-    Reporte,
-    Contacto
-    // BORRADO: 'Services' no va aquí porque es un servicio, no un componente.
+    Reporte
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule // 2. IMPORTANTE: Agregarlo a la lista de imports
+    AppRoutingModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos para el link activo según el PDF */
+.activo {
+  background-color: #ccc;
+  font-weight: bold;
+}
+.activo {
+  color: green !important;
+}

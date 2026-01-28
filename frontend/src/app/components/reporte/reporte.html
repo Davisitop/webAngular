@@ -1,1 +1,34 @@
-<p>reporte works!</p>
+<div class="container mt-4">
+    <h3>Reporte de Gastos</h3>
+    
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>RUC</th>
+                <th>Tipo de Gasto</th>
+                <th>Valor ($)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listaFacturas">
+                <td>{{ item.ruc }}</td>
+                <td>{{ item.gasto }}</td>
+                <td>{{ item.valor }}</td>
+            </tr>
+            
+            <tr *ngIf="listaFacturas.length === 0">
+                <td colspan="3" class="text-center">No hay facturas registradas.</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="fw-bold table-active">
+                <td colspan="2" class="text-end">TOTAL DEDUCIBLE:</td>
+                <td>{{ total }}</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <div class="alert alert-info" role="alert">
+       <strong>Nota:</strong> Este reporte muestra los datos ingresados en la pestaña "Registro".
+    </div>
+</div>
