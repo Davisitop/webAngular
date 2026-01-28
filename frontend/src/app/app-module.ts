@@ -1,6 +1,7 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // 1. IMPORTANTE: Agregar esto para los formularios
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientModule } from '@angular/common/http'; // <--- IMPORTANTE para tu práctica
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
@@ -12,18 +13,19 @@ import { Contacto } from './components/contacto/contacto';
 
 @NgModule({
   declarations: [
+    // Aquí solo van COMPONENTES. No pongas 'Gasto' (es interfaz) ni servicios.
     App,
     Informacion,
     Formulario,
     Menu,
     Reporte,
     Contacto
-    // BORRADO: 'Services' no va aquí porque es un servicio, no un componente.
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule // 2. IMPORTANTE: Agregarlo a la lista de imports
+    FormsModule,
+    HttpClientModule // <--- Agregado para que funcione el servicio de gastos
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
