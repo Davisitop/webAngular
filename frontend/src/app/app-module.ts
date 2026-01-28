@@ -1,7 +1,7 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; 
-import { HttpClientModule } from '@angular/common/http'; // <--- IMPORTANTE para tu práctica
+import { HttpClientModule } from '@angular/common/http'; // <--- IMPORTANTE
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
@@ -13,7 +13,6 @@ import { Contacto } from './components/contacto/contacto';
 
 @NgModule({
   declarations: [
-    // Aquí solo van COMPONENTES. No pongas 'Gasto' (es interfaz) ni servicios.
     App,
     Informacion,
     Formulario,
@@ -25,11 +24,9 @@ import { Contacto } from './components/contacto/contacto';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule // <--- Agregado para que funcione el servicio de gastos
+    HttpClientModule // <--- ESTO HACE QUE FUNCIONE EL SERVICIO
   ],
-  providers: [
-    provideBrowserGlobalErrorListeners()
-  ],
+  providers: [],
   bootstrap: [App]
 })
 export class AppModule { }

@@ -1,28 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-// CORRECCIÓN: Actualizamos la ruta aquí también
-import { FacturasService } from '../services/services';
+import { GastoService } from '../../gasto.service'; // Importa el servicio
+import { Gasto } from '../../Gasto'; // Importa la interfaz
 
 @Component({
   selector: 'app-reporte',
-  templateUrl: './reporte.html',
-  standalone: false
+  templateUrl: './reporte.html'
 })
 export class Reporte implements OnInit {
 
-  listaFacturas: any[] = [];
-  total: number = 0;
+  gastos: Gasto[] = [];
 
-  constructor(private facturasService: FacturasService) { }
+  constructor(private gastoService: GastoService) { }
 
-  ngOnInit() {
-    this.listaFacturas = this.facturasService.getFacturas();
-    this.calcularTotal();
-  }
-
-  calcularTotal() {
-    this.total = 0;
-    for (let item of this.listaFacturas) {
-      this.total += item.valor;
-    }
+  ngOnInit(): void {
+    this.gastoService.obtenerDatos().subscribe(
+      (data: Gasto[]) => {
+        console.log('Datos cargados:', data);
+        this.gastos = data;
+      },
+      (error) => {
+        console.error('Error al cargar datos:', error);
+      }
+    );
   }
 }
